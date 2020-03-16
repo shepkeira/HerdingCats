@@ -3,4 +3,6 @@
     <string name="title_activity_project_1">project_1</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
+    <string name="create_new_project">Create New Project</string>
+    <string name="herding_n_cats">Herding \n Cats</string>
 </resources>

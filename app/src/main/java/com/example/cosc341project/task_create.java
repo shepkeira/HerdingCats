@@ -12,7 +12,7 @@ public class task_create extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_task_create);
+        setContentView(R.layout.task_create);
         setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
 
     }

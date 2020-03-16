@@ -9,6 +9,6 @@ public class calendar_availability extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calendar_availability);
+        setContentView(R.layout.calendar_availability);
     }
 }

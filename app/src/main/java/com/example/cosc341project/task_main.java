@@ -9,6 +9,6 @@ public class task_main extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_task_main);
+        setContentView(R.layout.task_main);
     }
 }

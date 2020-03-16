@@ -9,6 +9,6 @@ public class calendar_meeting extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calendar_meeting);
+        setContentView(R.layout.calendar_meeting);
     }
 }

@@ -47,4 +47,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
+    public void createProj(View view) {
+        Intent intent = new Intent(this, project_create.class);
+
+        startActivity(intent);
+        finish();
+    }
+
 }

@@ -12,7 +12,7 @@ public class project_edit extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_project_edit);
+        setContentView(R.layout.project_edit);
         setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
 
     }

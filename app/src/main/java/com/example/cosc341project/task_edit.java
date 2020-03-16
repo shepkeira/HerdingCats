@@ -12,7 +12,7 @@ public class task_edit extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_task_edit);
+        setContentView(R.layout.task_edit);
         setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
 
     }
