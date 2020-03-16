@@ -9,6 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".chat_dM"></activity>
+        <activity android:name=".chat_createChannel" />
+        <activity android:name=".chat_main" />
+        <activity android:name=".calendar_availability" />
+        <activity android:name=".calendar_meeting" />
+        <activity android:name=".calendar_event" />
+        <activity android:name=".calendar_main" />
+        <activity android:name=".task_edit" />
+        <activity android:name=".task_create" />
+        <activity android:name=".project_edit" />
+        <activity android:name=".project_create" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
