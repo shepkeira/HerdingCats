@@ -9,6 +9,6 @@ public class chat_createChannel extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.chat_createChannel);
+        setContentView(R.layout.chat_create_channel);
     }
 }
