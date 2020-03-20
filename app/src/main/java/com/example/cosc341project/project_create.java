@@ -21,7 +21,7 @@ import java.io.IOException;
 
 import static androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode;
 
-public class project_create extends AppCompatActivity {
+public class project_create extends MainActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +57,7 @@ public class project_create extends AppCompatActivity {
             Spinner spin = findViewById(R.id.spinner);
             String teamMembers = spin.getSelectedItem().toString();
 
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(project_create.this, MainActivity.class);
 
             // Checking the input of each field that is required aren't empty
             if (pName.getText().toString().matches("")) {
@@ -73,7 +73,7 @@ public class project_create extends AppCompatActivity {
                     return;
 
                 }
-                String filename = "output.txt";
+                String filename = "projects.txt";
                 String fileContents = dpName + "," + teamMembers + "," + dpDueDate + "," + dpAddInfo + "\n";
                 FileOutputStream outputStream;
 
@@ -96,7 +96,9 @@ public class project_create extends AppCompatActivity {
                 intent.putExtra("dgender", dpDueDate);
                 intent.putExtra("dDiv", dpAddInfo);
 
-                startActivity(intent);
+                //startActivity(intent);
+                setResult(RESULT_OK, intent);
+
                 finish();
 
         }
