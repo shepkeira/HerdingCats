@@ -44,54 +44,6 @@ public class project_edit extends MainActivity {
         duedate = findViewById(R.id.date);
         additional = findViewById(R.id.infoField);
 
-        ArrayList<String> projList = new ArrayList<>();
-
-        try {
-            InputStream inputStream = openFileInput("tasks.txt");
-
-            if ( inputStream != null ) {
-                InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
-                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-                String receiveString = "";
-                StringBuilder stringBuilder = new StringBuilder();
-
-                while ( (receiveString = bufferedReader.readLine()) != null ) {
-                    stringBuilder.append("\n").append(receiveString);
-                    int pNum = receiveString.indexOf(",");
-                    String pN = receiveString.substring(0, pNum);
-                    if (pName.equals(pN)) {
-                        int p = receiveString.indexOf(",", pNum+1);
-                        String task = receiveString.substring(pNum + 1, p);
-                        projList.add(task);
-                    }
-
-                }
-
-                inputStream.close();
-                String ret = stringBuilder.toString();
-            }
-        }
-        catch (FileNotFoundException e) {
-            Log.e("login activity", "File not found: " + e.toString());
-        } catch (IOException e) {
-            Log.e("login activity", "Can not read file: " + e.toString());
-        }
-
-        Spinner spin = findViewById(R.id.spinnerTask);
-
-        // Starting spinner for the drop down menu of team member
-        String[] proj = {"None"};
-
-        String[] proj2 = addTo(projList, proj);
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, proj2);
-
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        spin.setAdapter(adapter);
-
-
         try {
             InputStream inputStream = openFileInput("projects.txt");
 
@@ -129,13 +81,7 @@ public class project_edit extends MainActivity {
         }
 
 
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-
-        ArrayList<String> projList = new ArrayList<>();
+        ArrayList<String> taskList = new ArrayList<>();
 
         try {
             InputStream inputStream = openFileInput("tasks.txt");
@@ -148,12 +94,13 @@ public class project_edit extends MainActivity {
 
                 while ( (receiveString = bufferedReader.readLine()) != null ) {
                     stringBuilder.append("\n").append(receiveString);
-                    String pN = receiveString.substring(0, receiveString.indexOf(","));
-                    if (projname.equals(pN)) {
-                        String task = receiveString.substring(receiveString.indexOf(","), receiveString.indexOf(",") + 1);
-                        projList.add(task);
+                    int pNum = receiveString.indexOf(",");
+                    String pN = receiveString.substring(0, pNum);
+                    if (pName.equals(pN)) {
+                        int p = receiveString.indexOf(",", pNum+1);
+                        String task = receiveString.substring(pNum + 1, p);
+                        taskList.add(task);
                     }
-
                 }
 
                 inputStream.close();
@@ -171,10 +118,10 @@ public class project_edit extends MainActivity {
         // Starting spinner for the drop down menu of team member
         String[] proj = {"None"};
 
-        proj = addTo(projList, proj);
+        String[] proj2 = addTo(taskList, proj);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, proj);
+                android.R.layout.simple_spinner_item, proj2);
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
@@ -190,7 +137,6 @@ public class project_edit extends MainActivity {
         Intent intent = new Intent(project_edit.this, task_create.class);
         intent.putExtra("proj", pName);
         startActivity(intent);
-        onPause();
     }
 
     public void opentask(View view) {
@@ -207,6 +153,57 @@ public class project_edit extends MainActivity {
             startActivity(intent);
         }
 
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        ArrayList<String> taskList = new ArrayList<>();
+
+        try {
+            InputStream inputStream = openFileInput("tasks.txt");
+
+            if ( inputStream != null ) {
+                InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+                String receiveString = "";
+                StringBuilder stringBuilder = new StringBuilder();
+
+                while ( (receiveString = bufferedReader.readLine()) != null ) {
+                    stringBuilder.append("\n").append(receiveString);
+                    int pNum = receiveString.indexOf(",");
+                    String pN = receiveString.substring(0, pNum);
+                    if (pName.equals(pN)) {
+                        int p = receiveString.indexOf(",", pNum+1);
+                        String task = receiveString.substring(pNum + 1, p);
+                        taskList.add(task);
+                    }
+                }
+
+                inputStream.close();
+                String ret = stringBuilder.toString();
+            }
+        }
+        catch (FileNotFoundException e) {
+            Log.e("login activity", "File not found: " + e.toString());
+        } catch (IOException e) {
+            Log.e("login activity", "Can not read file: " + e.toString());
+        }
+
+        Spinner spin = findViewById(R.id.spinnerTask);
+
+        // Starting spinner for the drop down menu of team member
+        String[] proj = {"None"};
+
+        String[] proj2 = addTo(taskList, proj);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, proj2);
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        spin.setAdapter(adapter);
     }
 
     private String[] addTo(ArrayList<String> proj, String[] teamMembers) {

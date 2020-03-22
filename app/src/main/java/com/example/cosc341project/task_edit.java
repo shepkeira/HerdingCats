@@ -55,15 +55,14 @@ public class task_edit extends AppCompatActivity {
                     int t = receiveString.indexOf(",", p+1);
                     String tN = receiveString.substring(p+1, t);
                     taskName.setText(tN);
-                    int m = receiveString.indexOf(",", t+1);
-                    String tm = receiveString.substring(t+1, m);
-                    teamMem.setText(tm);
-                    int d = receiveString.indexOf(",", m+1);
-                    String da = receiveString.substring(m+1, d);
+                    int d = receiveString.indexOf(",", t+1);
+                    String da = receiveString.substring(t+1, d);
                     date.setText(da);
                     int a = receiveString.indexOf(",", d+1);
                     String ai = receiveString.substring(d+1, a);
                     addinfo.setText(ai);
+                    String tm = receiveString.substring(a+1);
+                    teamMem.setText(tm);
                 }
 
                 inputStream.close();
