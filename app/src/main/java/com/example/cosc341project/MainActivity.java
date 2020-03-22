@@ -17,6 +17,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -79,7 +80,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String[] addTo(ArrayList<String> proj, String[] teamMembers) {
-        List<String> temp = Arrays.asList(teamMembers);
+        ArrayList temp = new ArrayList<String>();
+        for (String s: teamMembers) {
+            temp.add(s);
+        }
 
         for (String e : proj) {
             temp.add(e);
@@ -87,7 +91,10 @@ public class MainActivity extends AppCompatActivity {
 
         //temp.add(proj);
 
-        String[] stringArray = temp.toArray(new String[0]);
+        String stringArray[] = new String[temp.size()];
+        for (int j = 0; j<temp.size(); j++) {
+            stringArray[j] = (String) temp.get(j);
+        }
 
         return stringArray;
     }
@@ -126,7 +133,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void createProj(View view) {
         Intent intent = new Intent(MainActivity.this, project_create.class);
-        startActivityForResult(intent, 1);
+        //startActivityForResult(intent, 1);
+        startActivity(intent);
         //finish();
 
     }

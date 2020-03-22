@@ -86,18 +86,18 @@ public class project_create extends MainActivity {
                     e.printStackTrace();
 
                 } catch (IOException e) {
-                    System.out.print("IO Exception");
+                    //System.out.print("IO Exception");
                     e.printStackTrace();
                 }
                 // Passing values to be displayed in the main menu for users to keep track of how many projects
                 // they are currently working on
-                intent.putExtra("pName", dpName);
+                /*intent.putExtra("pName", dpName);
                 intent.putExtra("dfullName", teamMembers.toString());
                 intent.putExtra("dgender", dpDueDate);
-                intent.putExtra("dDiv", dpAddInfo);
+                intent.putExtra("dDiv", dpAddInfo);*/
 
-                //startActivity(intent);
-                setResult(RESULT_OK, intent);
+                startActivity(intent);
+                //setResult(RESULT_OK, intent);
 
                 finish();
 
