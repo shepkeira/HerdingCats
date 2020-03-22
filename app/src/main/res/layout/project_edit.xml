@@ -79,6 +79,49 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/tasks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="Tasks " />
+
+        <Spinner
+            android:id="@+id/spinnerTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp" />
+
+        <Button
+            android:id="@+id/viewTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="opentask"
+            android:layout_marginTop="50dp"
+            android:text="Open Task"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:onClick="add_task"
+            android:text="Add Task" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
             android:id="@+id/addInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
