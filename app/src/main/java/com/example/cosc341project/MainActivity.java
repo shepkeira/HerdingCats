@@ -139,4 +139,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void openProj(View view) {
+        Spinner spin = findViewById(R.id.spinner2);
+        String proj = spin.getSelectedItem().toString();
+
+        Intent intent = new Intent(MainActivity.this, project_edit.class);
+        intent.putExtra("proj", proj);
+
+        startActivity(intent);
+    }
 }
