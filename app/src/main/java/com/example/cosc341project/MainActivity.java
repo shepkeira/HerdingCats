@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -143,9 +144,15 @@ public class MainActivity extends AppCompatActivity {
         Spinner spin = findViewById(R.id.spinner2);
         String proj = spin.getSelectedItem().toString();
 
-        Intent intent = new Intent(MainActivity.this, project_edit.class);
-        intent.putExtra("proj", proj);
+        if (proj == "None") {
+            Toast none = Toast.makeText(this, "Please Select a Project", Toast.LENGTH_SHORT);
+            none.show();
+        } else {
+            Intent intent = new Intent(MainActivity.this, project_edit.class);
+            intent.putExtra("proj", proj);
 
-        startActivity(intent);
+            startActivity(intent);
+        }
     }
+
 }
