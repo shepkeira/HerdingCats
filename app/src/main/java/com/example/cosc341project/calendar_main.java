@@ -1,8 +1,13 @@
 package com.example.cosc341project;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NavUtils;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.CalendarView;
 
 public class calendar_main extends AppCompatActivity {
 
@@ -10,5 +15,71 @@ public class calendar_main extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calendar_main);
+        //getActionBar().setDisplayHomeAsUpEnabled(true);
     }
+
+    public void openChat(View view) {
+        Intent intent = new Intent(this, chat_main.class);
+
+        startActivity(intent);
+        finish();
+    }
+
+    public void openTask(View view) {
+        Intent intent = new Intent(this, task_main.class);
+
+        startActivity(intent);
+        finish();
+    }
+
+    public void openCalendar(View view) {
+        Intent intent = new Intent(this, calendar_main.class);
+
+        startActivity(intent);
+        finish();
+    }
+
+    public void cPEvent(View view) {
+        // Create basic calendar view to get date and move to creation of event on the day
+        CalendarView simpleCalendarView = (CalendarView) findViewById(R.id.calendarView); // get the reference of CalendarView
+        long selectedDate = simpleCalendarView.getDate(); // get selected date in milliseconds
+
+        // Prepare intent and pass date as extra to personal meeting intent
+        Intent intent = new Intent(this, calendar_event.class);
+        intent.putExtra("date", selectedDate);
+
+        startActivity(intent);
+        finish();
+    }
+
+    public void cPGmeeting(View view) {
+        CalendarView simpleCalendarView = (CalendarView) findViewById(R.id.calendarView); // get the reference of CalendarView
+        long selectedDate = simpleCalendarView.getDate(); // get selected date in milliseconds
+
+        Intent intent = new Intent(this, calendar_event.class);
+        intent.putExtra("date", selectedDate);
+
+        startActivity(intent);
+        finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent backToMain = new Intent(this, MainActivity.class);
+
+        startActivity(backToMain);
+        finish();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+}
 }
