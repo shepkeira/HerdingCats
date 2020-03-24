@@ -34,7 +34,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:text="@string/create_new_project"
-        android:textSize="28sp"
+        android:textSize="28dp"
         android:onClick="createProj"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -83,19 +83,37 @@
         android:id="@+id/spinner2"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:textSize="28dp"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="275dp"
-        app:layout_constraintTop_toBottomOf="@id/title"/>
+        app:layout_constraintTop_toBottomOf="@id/title" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:layout_marginTop="68dp"
         android:onClick="openProj"
-        app:layout_constraintTop_toBottomOf="@id/spinner2"
-        app:layout_constraintLeft_toLeftOf="@id/spinner2"
-        tools:layout_editor_absoluteX="148dp" />
+        android:textSize="28dp"
+        android:text="@string/open_project_details"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner2" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="19dp"
+        android:text="Your projects"
+        android:textSize="28dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/spinner2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

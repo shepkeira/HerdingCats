@@ -5,4 +5,5 @@
     <string name="tab_text_2">Tab 2</string>
     <string name="create_new_project">Create New Project</string>
     <string name="herding_n_cats">Herding \n Cats</string>
+    <string name="open_project_details">Open project details</string>
 </resources>
