@@ -8,6 +8,11 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CalendarView;
+import android.widget.Toast;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 public class calendar_main extends AppCompatActivity {
 
@@ -16,7 +21,20 @@ public class calendar_main extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calendar_main);
         //getActionBar().setDisplayHomeAsUpEnabled(true);
+
+        CalendarView calendar = findViewById(R.id.calendarView);
+
+        calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+
+            @Override
+            public void onSelectedDayChange(CalendarView view, int year, int month, int date) {
+                SimpleDateFormat formatter=new SimpleDateFormat("yyyy MM dd");
+                // Have to make gregorian calendar conversion to date and stirng to pass to edittext
+            }
+        });
+
     }
+
 
     public void openChat(View view) {
         Intent intent = new Intent(this, chat_main.class);
@@ -82,4 +100,5 @@ public class calendar_main extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
 }
+
 }

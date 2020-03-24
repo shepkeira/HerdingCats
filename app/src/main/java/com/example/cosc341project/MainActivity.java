@@ -79,6 +79,9 @@ public class MainActivity extends AppCompatActivity {
 
         spin.setAdapter(adapter);
 
+        Intent cEventList = new Intent(this, calendar_event.class);
+        cEventList.putExtra("projects", proj);
+
     }
 
     private String[] addTo(ArrayList<String> proj, String[] teamMembers) {
