@@ -39,6 +39,11 @@
             android:parentActivityName=".MainActivity"/>
         <activity android:name=".task_edit" />
         <activity android:name=".task_create" />
+
     </application>
+
+    <meta-data
+        android:name="android.support.PARENT_ACTIVITY"
+        android:value="com.example.MainActivity"/>
 
 </manifest>

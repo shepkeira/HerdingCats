@@ -21,6 +21,7 @@ public class calendar_main extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calendar_main);
         //getActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         CalendarView calendar = findViewById(R.id.calendarView);
 
