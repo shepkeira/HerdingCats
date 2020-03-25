@@ -33,6 +33,7 @@ public class project_create extends MainActivity {
 
             // Starting spinner for the drop down menu of team member
             String[] teamMembers = {"Keira", "Brian", "Even", "Lydia"};
+
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                     android.R.layout.simple_spinner_item, teamMembers);
 

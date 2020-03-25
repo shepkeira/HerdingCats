@@ -36,28 +36,6 @@ public class calendar_main extends AppCompatActivity {
 
     }
 
-
-    public void openChat(View view) {
-        Intent intent = new Intent(this, chat_main.class);
-
-        startActivity(intent);
-        finish();
-    }
-
-    public void openTask(View view) {
-        Intent intent = new Intent(this, task_main.class);
-
-        startActivity(intent);
-        finish();
-    }
-
-    public void openCalendar(View view) {
-        Intent intent = new Intent(this, calendar_main.class);
-
-        startActivity(intent);
-        finish();
-    }
-
     public void cPEvent(View view) {
         // Create basic calendar view to get date and move to creation of event on the day
         CalendarView simpleCalendarView = (CalendarView) findViewById(R.id.calendarView); // get the reference of CalendarView
@@ -77,6 +55,27 @@ public class calendar_main extends AppCompatActivity {
 
         Intent intent = new Intent(this, calendar_event.class);
         intent.putExtra("date", selectedDate);
+
+        startActivity(intent);
+        finish();
+    }
+
+    public void openChat(View view) {
+        Intent intent = new Intent(this, chat_main.class);
+
+        startActivity(intent);
+        finish();
+    }
+
+    public void openTask(View view) {
+        Intent intent = new Intent(this, task_main.class);
+
+        startActivity(intent);
+        finish();
+    }
+
+    public void openCalendar(View view) {
+        Intent intent = new Intent(this, calendar_main.class);
 
         startActivity(intent);
         finish();

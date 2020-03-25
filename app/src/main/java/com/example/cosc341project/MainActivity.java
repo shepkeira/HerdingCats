@@ -3,6 +3,7 @@ package com.example.cosc341project;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
+import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -79,8 +80,12 @@ public class MainActivity extends AppCompatActivity {
 
         spin.setAdapter(adapter);
 
+
         Intent cEventList = new Intent(this, calendar_event.class);
-        cEventList.putExtra("projects", proj);
+        Intent cChat = new Intent(this, chat_main.class);
+        cChat.putExtra("projects", projList);
+        cEventList.putExtra("projects", projList);
+
 
     }
 
@@ -158,5 +163,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
     }
+
 
 }
