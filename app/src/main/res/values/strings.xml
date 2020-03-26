@@ -6,5 +6,8 @@
     <string name="create_new_project">Create New Project</string>
     <string name="herding_n_cats">Herding \n Cats</string>
     <string name="open_project_details">Open project details</string>
+    <string name="Close">Close</string>
+    <string name="Open">Open</string>
+    <string name="thingq1">Thingq1</string>
 
 </resources>

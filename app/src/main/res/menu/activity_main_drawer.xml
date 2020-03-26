@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/Channels"
+        android:title="Channel">
+        <menu>
+            <item android:id="@+id/chan1"
+                android:title="COSC 341: Step 1"/>
+        </menu>
+    </item>
+
+    <item android:id="@+id/Direct_Messages"
+        android:title="Direct Message">
+        <menu>
+            <item android:id="@+id/DM1"
+                android:title="Brian"/>
+        </menu>
+    </item>
+
+</menu>
