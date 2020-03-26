@@ -17,7 +17,7 @@ import android.widget.Toast;
 import com.google.android.material.navigation.NavigationView;
 
 public class chat_main extends AppCompatActivity {
-
+    //yes
     private DrawerLayout dl;
     private ActionBarDrawerToggle t;
     private NavigationView nv;
