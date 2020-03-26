@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NavUtils;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -46,18 +47,27 @@ public class calendar_main extends AppCompatActivity {
         intent.putExtra("date", selectedDate);
 
         startActivity(intent);
-        finish();
+        //finish();
     }
 
     public void cPGmeeting(View view) {
         CalendarView simpleCalendarView = (CalendarView) findViewById(R.id.calendarView); // get the reference of CalendarView
         long selectedDate = simpleCalendarView.getDate(); // get selected date in milliseconds
 
-        Intent intent = new Intent(this, calendar_event.class);
+        Intent intent = new Intent(this, calendar_meeting.class);
         intent.putExtra("date", selectedDate);
 
         startActivity(intent);
-        finish();
+        //finish();
+        //openWebPage("https://www.when2meet.com/");
+    }
+
+    public void openWebPage(String url) {
+        Uri webpage = Uri.parse(url);
+        Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
     }
 
     public void openChat(View view) {

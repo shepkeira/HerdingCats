@@ -63,15 +63,24 @@
 
         <EditText
             android:id="@+id/date"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="52dp"
-            android:layout_marginLeft="52dp"
             android:layout_marginTop="50dp"
             android:ems="10"
-            android:hint="dd/mm/yyyy"
             android:gravity="center"
+            android:hint="dd/mm/yyyy"
             android:inputType="date" />
+
+        <EditText
+            android:id="@+id/date2"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="00:00 AM/PM"
+            android:inputType="time" />
 
     </LinearLayout>
 
@@ -109,7 +118,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:onClick="createMeeting"
+            android:onClick="createEvent"
             android:text="Done" />
     </LinearLayout>
 

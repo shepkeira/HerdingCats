@@ -42,27 +42,6 @@ public class calendar_event extends AppCompatActivity {
             String sDate = formatter.format(date);
 
         }
-
-
-
-
-       // String[] proj = cMain.getStringArrayExtra("projects");
-
-        /*
-        Spinner spin = findViewById(R.id.projectSpinner);
-
-        // Starting spinner for the drop down menu of projects
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, proj);
-
-
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        spin.setAdapter(adapter);
-
-         */
-
-
     }
 
     @Override
@@ -77,7 +56,7 @@ public class calendar_event extends AppCompatActivity {
         }
     }
 
-    public void createMeeting(View view) {
-
+    public void createEvent(View view) {
+        finish();
     }
 }
