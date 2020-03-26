@@ -14,7 +14,7 @@ import java.util.Date;
 
 public class calendar_meeting extends AppCompatActivity {
 
-    Long date, today = System.currentTimeMillis();;
+    Long date, today = System.currentTimeMillis();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +38,6 @@ public class calendar_meeting extends AppCompatActivity {
             String sDate = formatter.format(date);
 
         }
-
     }
 
     @Override

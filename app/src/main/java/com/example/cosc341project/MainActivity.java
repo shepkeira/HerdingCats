@@ -28,6 +28,8 @@ import static androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode;
 
 public class MainActivity extends AppCompatActivity {
 
+    ArrayList<String> projList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         ImageButton task = findViewById(R.id.taskBtn);
         ImageButton calendar = findViewById(R.id.calendarBtn);
 
-        ArrayList<String> projList = new ArrayList<>();
+        projList = new ArrayList<>();
 
         try {
             InputStream inputStream = openFileInput("projects.txt");
@@ -111,6 +113,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void openChat(View view) {
         Intent intent = new Intent(this, chat_main.class);
+
+//        intent.putExtra(projList, "project");
+        intent.putExtra("project", projList);
 
         startActivity(intent);
         finish();

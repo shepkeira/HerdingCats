@@ -23,7 +23,7 @@ public class chat_main extends AppCompatActivity {
 
         Spinner spin = findViewById(R.id.spinner2);
 
-        ArrayList<String> projAL = values.getStringArrayListExtra("projects");
+        ArrayList<String> projAL = values.getStringArrayListExtra("project");
         String[] proj = projAL.toArray(new String[projAL.size()]);
 
 

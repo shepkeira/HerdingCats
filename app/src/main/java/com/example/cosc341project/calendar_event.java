@@ -16,7 +16,7 @@ import java.util.Date;
 
 public class calendar_event extends AppCompatActivity {
 
-    Long date, today = System.currentTimeMillis();;
+    Long date, today = System.currentTimeMillis();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
