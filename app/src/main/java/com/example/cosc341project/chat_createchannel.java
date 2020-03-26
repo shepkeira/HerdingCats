@@ -137,10 +137,9 @@ public class chat_createchannel extends AppCompatActivity {
             //System.out.print("IO Exception");
             e.printStackTrace();
         }
+/*        Intent toDm = new Intent(this, chat_dM.class);
 
-        Intent toDm = new Intent(this, chat_dM.class);
-
-        startActivity(toDm);
+        startActivity(toDm);*/
         finish();
 
     }

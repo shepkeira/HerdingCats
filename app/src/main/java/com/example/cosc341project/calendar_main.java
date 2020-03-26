@@ -78,17 +78,14 @@ public class calendar_main extends AppCompatActivity {
     }
 
     public void openTask(View view) {
-        Intent intent = new Intent(this, task_main.class);
+        Intent intent = new Intent(this, MainActivity.class);
 
         startActivity(intent);
         finish();
     }
 
     public void openCalendar(View view) {
-        Intent intent = new Intent(this, calendar_main.class);
 
-        startActivity(intent);
-        finish();
     }
 
     @Override

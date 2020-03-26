@@ -122,10 +122,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openTask(View view) {
-        Intent intent = new Intent(this, task_main.class);
 
-        startActivity(intent);
-        finish();
     }
 
     public void openCalendar(View view) {
