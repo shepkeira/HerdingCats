@@ -25,7 +25,7 @@
             android:parentActivityName=".MainActivity"></activity>
         <activity android:name=".chat_dM"
             android:parentActivityName=".chat_main"/>
-        <activity android:name=".chat_createChannel"
+        <activity android:name=".chat_createchannel"
             android:parentActivityName=".chat_main"/>
         <activity android:name=".chat_main"
             android:parentActivityName=".MainActivity"/>
