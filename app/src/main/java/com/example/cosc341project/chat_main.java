@@ -35,9 +35,18 @@ public class chat_main extends AppCompatActivity {
 
        spin.setAdapter(adapter);
 
+       // Get project properties and if anything is in the project files
+
     }
 
    public void createChat(View view) {
+        // Check if project has preexisting channels
+       // if no go to create chat
+       // else go to the chat channels
+        Intent create = new Intent(this, chat_createchannel.class);
+
+        startActivity(create);
+        finish();
 
     }
 
