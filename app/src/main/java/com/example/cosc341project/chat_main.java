@@ -166,6 +166,14 @@ public class chat_main extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent backToMain = new Intent(this, chat_dM.class);
+
+        startActivity(backToMain);
+        finish();
+    }
+
 /*
     @Override
     protected void onCreate(Bundle savedInstanceState) {

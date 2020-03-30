@@ -103,4 +103,23 @@ public class project_create extends MainActivity {
                 finish();
 
         }
+    @Override
+    public void onBackPressed() {
+        Intent backToMain = new Intent(this, chat_dM.class);
+
+        startActivity(backToMain);
+        finish();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                Intent intent = new Intent(this, chat_dM.class);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 }

@@ -90,7 +90,7 @@ public class calendar_main extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent backToMain = new Intent(this, MainActivity.class);
+        Intent backToMain = new Intent(this, chat_dM.class);
 
         startActivity(backToMain);
         finish();
@@ -100,7 +100,7 @@ public class calendar_main extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                Intent intent = new Intent(this, MainActivity.class);
+                Intent intent = new Intent(this, chat_dM.class);
                 startActivity(intent);
                 return true;
             default:
